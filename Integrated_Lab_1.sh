@@ -19,7 +19,7 @@ mkdir scripts
 ln -s $dataLocation/*.fastq.gz sequence_files/
 ln -s $dataLocation/nwcs_arct_metadata.tsv .
 ln -s $dataLocation/97* reference_data/
-ln -s $dataLocation/*.py scripts
+cp -s $dataLocation/*.py scripts
 
 #Prep database for SortMeRNA using: cd reference_data; /usr/local/sortmerna-2.1/indexdb_rna --ref 97_otus.fasta
 sortmernaDB=$workingDir"/reference_data/97_otus"
