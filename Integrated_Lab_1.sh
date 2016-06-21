@@ -115,7 +115,7 @@ pick_open_reference_otus.py -i $inputFasta -o $workingDir/clustering/ -p $workin
 scripts/remove_low_confidence_otus.py -i clustering/otu_table_mc2_w_tax_no_pynast_failures.biom -o clustering/otu_table_high_conf.biom 
 
 # Prepare summaries of the biom results to see the effect of removing low abundance OTUs
-biom summarize-table -i clustering/otu_table_mc1_w_tax_no_pynast_failures.biom -o clustering/otu_table_mc1_w_tax_no_pynast_failures_summary.txt
+biom summarize-table -i clustering/otu_table_mc2_w_tax_no_pynast_failures.biom -o clustering/otu_table_mc2_w_tax_no_pynast_failures_summary.txt
 biom summarize-table -i clustering/otu_table_high_conf.biom -o clustering/otu_table_high_conf_summary.txt
 
 #Convert the BIOM format file to tab-separated format (human readable)
