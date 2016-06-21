@@ -107,12 +107,12 @@ echo "assign_taxonomy:id_to_taxonomy_fp $workingDir/reference_data/97_otu_taxono
 # then use de novo clustering on the sequences that were not similar to anything in the database
 # This will do clustering and taxonomic assignment
 # full paths to all files must be provided
-pick_open_reference_otus.py -i $inputFasta -o $workingDir/clustering/ -p $workingDir/clustering_params.txt -m sortmerna_sumaclust -s 0.1 -v --min_otu_size 1 --parallel --jobs_to_start $ncores  
+pick_open_reference_otus.py -i $inputFasta -o $workingDir/clustering/ -p $workingDir/clustering_params.txt -m sortmerna_sumaclust --parallel --jobs_to_start $ncores  
 
 # Remove low abundance OTUs 
 # These may be due to cross-over from MiSeq lanes or sequencing errors OR they may be biological
 # Make sure this is appropriate for your study before running
-scripts/remove_low_confidence_otus.py -i clustering/otu_table_mc1_w_tax_no_pynast_failures.biom -o clustering/otu_table_high_conf.biom 
+scripts/remove_low_confidence_otus.py -i clustering/otu_table_mc2_w_tax_no_pynast_failures.biom -o clustering/otu_table_high_conf.biom 
 
 # Prepare summaries of the biom results to see the effect of removing low abundance OTUs
 biom summarize-table -i clustering/otu_table_mc1_w_tax_no_pynast_failures.biom -o clustering/otu_table_mc1_w_tax_no_pynast_failures_summary.txt
