@@ -5,8 +5,8 @@
 set -v
 
 #Setup some parameters for the script
-dataLocation="~/CourseData/metagenomics/integrated_assignment_day1/" # this is where your fastq files should be
-workingDir="~/workspace/assignment1" # this is where all the files generated in this script will be saved
+dataLocation="/home/ubuntu/CourseData/metagenomics/integrated_assignment_day1/" # this is where your fastq files should be
+workingDir="/home/ubuntu/workspace/assignment1" # this is where all the files generated in this script will be saved
 ncores=4 # how many cores do we have to work with
 
 cd $workingDir
